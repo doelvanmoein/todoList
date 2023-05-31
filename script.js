@@ -2,13 +2,13 @@ let input = document.querySelector('.input');
 let listElement = document.querySelector('.list-group');
 let clock = document.getElementById('clock');
 
-input.addEventListener('keypress', (e) => {
-    if (e.which === 13){
+input.addEventListener('keypress', (event) => {
+    if (event.which === 13){
         addTask();
     }
 });
 
-listElement.addEventListener('click', event=> {
+listElement.addEventListener('click', (event) => {
 
     if (event.target.className === 'form-check-input me-1'){
         event.target.parentNode.classList.toggle('alert-dark');
