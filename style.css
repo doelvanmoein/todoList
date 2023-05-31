@@ -1,0 +1,12 @@
+.mark-completed {
+    text-decoration-line: line-through !important;
+    text-decoration-color: red;
+    text-decoration-style: wavy;
+    color: #B2A9A9;
+}
+
+#clock {
+    color: black; 
+    background-color:deepskyblue;
+    font-weight: bold;
+}
