@@ -1,11 +1,32 @@
 let input = document.querySelector('.input');
 let listElement = document.querySelector('.list-group');
+let clock = document.getElementById('clock');
 
 input.addEventListener('keypress', (e) => {
     if (e.which === 13){
         addTask();
     }
 });
+
+listElement.addEventListener('click', event=> {
+
+    if (event.target.className === 'form-check-input me-1'){
+        event.target.parentNode.classList.toggle('alert-dark');
+        event.target.parentNode.classList.toggle('mark-completed');
+    }
+
+    if (event.target.className === 'btn-close'){
+        event.target.parentNode.remove();
+    }
+
+});
+
+function time() {
+    let date = new Date();
+    clock.textContent = date;
+}
+
+setInterval(time, 1000);
 
 function addTask(){
 
@@ -26,25 +47,3 @@ function addTask(){
 
     input.value = '';
 }
-
-listElement.addEventListener('click', event=> {
-
-    if (event.target.className === 'form-check-input me-1'){
-        event.target.parentNode.classList.toggle('alert-dark');
-        event.target.parentNode.classList.toggle('mark-completed');
-    }
-
-    if (event.target.className === 'btn-close'){
-        event.target.parentNode.remove();
-    }
-
-});
-
-let clock = document.getElementById('clock');
-
-function time() {
-    let date = new Date();
-    clock.textContent = date;
-}
-
-setInterval(time, 1000);
